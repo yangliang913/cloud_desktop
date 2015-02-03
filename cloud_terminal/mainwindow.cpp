@@ -37,4 +37,8 @@ void CMainWindow::createSecondLoginWidget()
 {
 	secondLoginWidget = new QWidget(this);
 	QLabel *label = new QLabel("secondLoginWidget", secondLoginWidget);
+	QHBoxLayout *layout = new QHBoxLayout;
+
+	secondLoginWidget->setLayout(layout);
+	
 }
