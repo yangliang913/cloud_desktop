@@ -1,4 +1,14 @@
 <RCC>
-    <qresource prefix="cloud_terminal">
+    <qresource prefix="/first_login_res">
+        <file alias="background">Resources/first_login_res/background.jpg</file>
+        <file alias="default_photo">Resources/first_login_res/default_photo.png</file>
+        <file alias="input">Resources/first_login_res/input.png</file>
+    </qresource>
+    <qresource prefix="/dialog_res">
+        <file alias="dialogBackground">Resources/dialog_res/dialogBackground.png</file>
+        <file alias="dialogButton">Resources/dialog_res/dialogButton.png</file>
+        <file alias="dialogButton_pressed">Resources/dialog_res/dialogButton_pressed.png</file>
+        <file alias="dialogClose">Resources/dialog_res/dialogClose.png</file>
+        <file alias="dialogClose_hover">Resources/dialog_res/dialogClose_hover.png</file>
     </qresource>
 </RCC>

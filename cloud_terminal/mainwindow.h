@@ -4,6 +4,11 @@
 #include <QMainWindow>
 #include <QWidget>
 #include <QStackedLayout>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QPixmap>
+#include "mytextedit.h"
+#include "zc_message_box.h"
 
 class CMainWindow : public QMainWindow
 {
@@ -23,6 +28,10 @@ private:
 	QStackedLayout		*mainLayout;
 	int					currentScreenWidth;
 	int					currentScreenHeight;
+	double				widthRatio;
+	double				heightRatio;
+	CMyTextEdit			*userTextEdit;
+	CMyTextEdit			*passwordTextEdit;
 };
 
 #endif // MAINWINDOW_H
