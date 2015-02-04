@@ -10,12 +10,11 @@
 #include <QLineEdit>
 #include <QIntValidator>
 #include <qt_windows.h>
+#include <QSettings>
 
 enum BtnType
 {
-	CpuBtnType,
-	MemBtnType,
-	BandwidthEditBtnType
+	SaveUserNameType
 };
 
 class ToggleButton : public QPushButton
@@ -23,7 +22,7 @@ class ToggleButton : public QPushButton
 	Q_OBJECT
 
 public:
-	explicit ToggleButton(int type, QString str, QWidget *parent);
+	explicit ToggleButton(int type, int wid, int hei, QString str="", QWidget *parent=0);
 	~ToggleButton();
 
 public:
@@ -37,11 +36,12 @@ protected:
 	void paintEvent ( QPaintEvent * );
 
 private:
-	bool isChecked;
-	int btnType;
-	QString btnStr;
-	QPoint strStartPoint;
-	QLineEdit *bandwidthLineEdit;
+	bool			isChecked;
+	int				btnType;
+	QString			btnStr;
+	QPoint			strStartPoint;
+	int				width;
+	int				height;
 };
 
 #endif // TOGGLEBUTTON_H

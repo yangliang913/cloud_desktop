@@ -12,11 +12,9 @@ CMyTextEdit::CMyTextEdit(QString img, QString text, int wid, int hei, QWidget *p
 	this->setAutoFillBackground(true);
 
 	QPalette palette;
-	//palette.setColor(QPalette::Background, QColor(192, 253, 123));
 	palette.setBrush(QPalette::Background, QBrush(QPixmap(imgPath)));
 	this->setPalette(palette);
-	inputEdit = new QTextEdit();
-	//inputEdit->setAlignment(Qt::AlignHCenter);
+	inputEdit = new QLineEdit();
 	inputEdit->setPlaceholderText(showText);
 	inputEdit->setStyleSheet("background-color:transparent;color:white;font-size:12px;border:0px;");
 	QHBoxLayout *hLayout = new QHBoxLayout;

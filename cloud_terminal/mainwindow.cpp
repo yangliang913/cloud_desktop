@@ -16,9 +16,11 @@ CMainWindow::CMainWindow(QWidget *parent)
 	mainLayout = new QStackedLayout();
 	mainLayout->addWidget(firstLoginWidget);
 	mainLayout->addWidget(secondLoginWidget);
+	mainLayout->setAlignment(Qt::AlignCenter);
 	this->setStyleSheet("QMainWindow{border-image: url(:/first_login_res/background);}"); 
 	this->setLayout(mainLayout);
 	mainLayout->setCurrentIndex(0);
+	//mainLayout->setContentsMargins(currentScreenWidth - 400, currentScreenHeight - 200, currentScreenWidth - 400, currentScreenHeight - 200);
 	this->resize(currentScreenWidth, currentScreenHeight);
 
 	this->setWindowTitle(QStringLiteral("ÖÂÔÆ¿Æ¼¼×ÀÃæÔÆÖÕ¶Ë"));
@@ -36,34 +38,66 @@ void CMainWindow::createFirstLoginWidget()
 	//msgBox->show();
 	//delete msgBox;
 	firstLoginWidget = new QWidget(this);
-	firstLoginWidget->setFixedSize(currentScreenWidth, currentScreenHeight);
+	firstLoginWidget->setMaximumSize(800,400);
+	firstLoginWidget->setMinimumSize(800, 400);
 	QVBoxLayout *mainLayout = new QVBoxLayout;
 	QHBoxLayout *hLayout1 = new QHBoxLayout;
 	QLabel *photoLabel = new QLabel;
-	photoLabel->setFixedSize(160, 160);
+	photoLabel->setFixedSize(110, 110);
 	QPixmap *photoPixmap = new QPixmap(":/first_login_res/default_photo");
 	photoLabel->setPixmap(*photoPixmap);
 	hLayout1->setAlignment(Qt::AlignCenter);
+	hLayout1->setContentsMargins(0, 0, 0, 0);
 	hLayout1->addWidget(photoLabel);
 	
 	QHBoxLayout *hLayout2 = new QHBoxLayout;
 	userTextEdit = new CMyTextEdit(":/first_login_res/input", QStringLiteral("ÓÃ»§Ãû"), 280, 50);
 	hLayout2->setAlignment(Qt::AlignCenter);
+	hLayout2->setContentsMargins(0, 0, 0, 0);
 	hLayout2->addWidget(userTextEdit);
 	
 	QHBoxLayout *hLayout3 = new QHBoxLayout;
 	passwordTextEdit = new CMyTextEdit(":/first_login_res/input", QStringLiteral("ÃÜÂë"), 280, 50);
 	hLayout3->setAlignment(Qt::AlignCenter);
+	hLayout3->setContentsMargins(0, 0, 0, 0);
 	hLayout3->addWidget(passwordTextEdit);
 
-	//QHBoxLayout *hLayout3 = new QHBoxLayout;
-	//passwordTextEdit = new CMyTextEdit(":/first_login_res/input", QStringLiteral("ÃÜÂë"), 280, 50);
-	//hLayout3->setAlignment(Qt::AlignCenter);
-	//hLayout3->addWidget(passwordTextEdit);
+	QHBoxLayout *hLayout4 = new QHBoxLayout;
+	ToggleButton *saveUserBtn= new ToggleButton(SaveUserNameType, 66, 14);
+	hLayout4->setContentsMargins(0, 0, 0, 0);
+	hLayout4->setAlignment(Qt::AlignCenter);
+	hLayout4->addWidget(saveUserBtn);
 
+	QPushButton *firstLoginBtn = new QPushButton();
+	firstLoginBtn->setFixedSize(280, 50);
+	firstLoginBtn->setObjectName("firstLoginBtn");
+	firstLoginBtn->setStyleSheet("QPushButton#firstLoginBtn{border-image: url(:/first_login_res/btn_pressed);}"
+		"QPushButton#firstLoginBtn:hover{border-image: url(:/first_login_res/btn_hover);}"
+		"QPushButton#firstLoginBtn:pressed{border-image: url(:/first_login_res/btn_pressed);}");
+	QHBoxLayout *hLayout5 = new QHBoxLayout;
+	hLayout5->setAlignment(Qt::AlignCenter);
+	hLayout5->setContentsMargins(0, 0, 0, 0);
+	hLayout5->addWidget(firstLoginBtn);
+
+	QHBoxLayout *hLayout6 = new QHBoxLayout;
+	QLabel *logoLabel = new QLabel;
+	photoLabel->setFixedSize(185, 64);
+	QPixmap *logoPixmap = new QPixmap(":/first_login_res/logo");
+	logoLabel->setPixmap(*logoPixmap);
+	hLayout6->setAlignment(Qt::AlignCenter);
+	hLayout6->setContentsMargins(0, 0, 0, 0);
+	hLayout6->addWidget(logoLabel);
+
+	mainLayout->setContentsMargins(0, 0, 0, 0);
 	mainLayout->addLayout(hLayout1);
+	mainLayout->addSpacing(40);
 	mainLayout->addLayout(hLayout2);
+	mainLayout->addSpacing(6);
 	mainLayout->addLayout(hLayout3);
+	mainLayout->addSpacing(54);
+	mainLayout->addLayout(hLayout4);
+	mainLayout->addLayout(hLayout5);
+	mainLayout->addLayout(hLayout6);
 	firstLoginWidget->setLayout(mainLayout);
 }
 

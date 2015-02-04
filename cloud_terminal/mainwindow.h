@@ -7,8 +7,10 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPixmap>
+#include <QPushButton>
 #include "mytextedit.h"
 #include "zc_message_box.h"
+#include "togglebutton.h"
 
 class CMainWindow : public QMainWindow
 {

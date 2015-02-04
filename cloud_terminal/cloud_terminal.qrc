@@ -3,6 +3,12 @@
         <file alias="background">Resources/first_login_res/background.jpg</file>
         <file alias="default_photo">Resources/first_login_res/default_photo.png</file>
         <file alias="input">Resources/first_login_res/input.png</file>
+        <file alias="btn_pressed">Resources/first_login_res/btn_pressed.png</file>
+        <file alias="btn_normal">Resources/first_login_res/btn_normal.png</file>
+        <file alias="btn_hover">Resources/first_login_res/btn_hover.png</file>
+        <file alias="save_user_check">Resources/first_login_res/save_user_check.png</file>
+        <file alias="save_user_uncheck">Resources/first_login_res/save_user_uncheck.png</file>
+        <file alias="logo">Resources/first_login_res/logo.png</file>
     </qresource>
     <qresource prefix="/dialog_res">
         <file alias="dialogBackground">Resources/dialog_res/dialogBackground.png</file>

@@ -8,6 +8,7 @@
 #include <QString>
 #include <QTextEdit>
 #include <QHBoxLayout>
+#include <QLineEdit>
 
 class CMyTextEdit : public QWidget
 {
@@ -22,7 +23,7 @@ private:
 	QString		imgPath;
 	int			width;
 	int			height;
-	QTextEdit	*inputEdit;
+	QLineEdit	*inputEdit;
 	QString		showText;
 };
 
