@@ -9,9 +9,9 @@ CLabel::CLabel(QWidget *parent) :
 
 CLabel::~CLabel()
 {
-    delete m_pLabelIcon;
-    delete m_pLabelText;
-    delete m_pHLayout;
+    //delete m_pLabelIcon;
+    //delete m_pLabelText;
+    //delete m_pHLayout;
 }
 
 void CLabel::setPixmap(const QPixmap &pixmap, int width, int height)
