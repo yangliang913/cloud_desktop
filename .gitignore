@@ -50,6 +50,7 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
+[Gg]eneratedFiles/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -91,6 +92,8 @@ ipch/
 *.psess
 *.vsp
 *.vspx
+*.vcxproj
+*.filters
 
 # Guidance Automation Toolkit
 *.gpState
