@@ -147,21 +147,23 @@ void CMainWindow::createMoreThan3Widget()
 	morethan3Widget->setFixedSize(CENTER_WIDGET_W, CENTER_WIDGET_H);
 
 
-	CUserCard* btnarray = new CUserCard[4];
+	CUserCard* btnarray[4];
 	QHBoxLayout* h_layout = new QHBoxLayout;
 	h_layout->setAlignment(Qt::AlignCenter);
 	h_layout->setContentsMargins(0, 0, 0, 150);
 	h_layout->setSpacing(30);
 	for (int i = 0; i < 3;i++)
 	{
+		btnarray[i] = new CUserCard();
 		QString strPic = Util::getSkinName(i);
-		btnarray[i].setPixmap(QPixmap(strPic));
+		btnarray[i]->setPixmap(QPixmap(strPic));
 		//btnarray[i].setText(QString("HAHAHA"));
-		h_layout->addWidget(&btnarray[i]);
+		h_layout->addWidget(btnarray[i]);
 	
 	}
-	btnarray[3].setPixmap(QPixmap(QString(":/second_logres/addusernomal")),110,110);
-	h_layout->addWidget(&btnarray[3]);
+	btnarray[3] = new CUserCard();
+	btnarray[3]->setPixmap(QPixmap(QString(":/second_logres/addusernomal")),110,110);
+	h_layout->addWidget(btnarray[3]);
 
 
 	
@@ -172,17 +174,15 @@ void CMainWindow::createMoreThan3Widget()
 	palette.setBrush(QPalette::Background, QBrush(QPixmap(":/userpic/p1")));
 	panalwidget->setPalette(palette);
 
-
-
-
-	CLabel* photoarray = new CLabel[12];
+	CLabel* photoarray[12];
 	QGridLayout* panlelayout = new QGridLayout;
-	for (int i = 0; i < 12;i++)
+	for (int i = 0; i < 12; i++)
 	{
-		photoarray[i].setFixedSize(60, 60);
-		photoarray[i].setPixmap(QPixmap(QString(":/userpic/p%1").arg(i+1)), 60, 60);
+		photoarray[i] = new CLabel();
+		photoarray[i]->setFixedSize(60, 60);
+		photoarray[i]->setPixmap(QPixmap(QString(":/userpic/p%1").arg(i + 1)), 60, 60);
 		panlelayout->setSpacing(5);
-		panlelayout->addWidget(&photoarray[i], i / 6, i % 6);
+		panlelayout->addWidget(photoarray[i], i / 6, i % 6);
 	}
 	panlelayout->setContentsMargins(0, 0, 0, 0);
 	panalwidget->setLayout(panlelayout);
