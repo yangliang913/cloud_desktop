@@ -23,10 +23,12 @@ public:
 public:
 	void createFirstLoginWidget();
 	void createSecondLoginWidget();
+	void createMoreThan3Widget();
 
 private:
 	QWidget				*firstLoginWidget;
 	QWidget				*secondLoginWidget;
+	QWidget				*morethan3Widget;
 	QStackedLayout		*mainLayout;
 	int					currentScreenWidth;
 	int					currentScreenHeight;
@@ -34,6 +36,8 @@ private:
 	double				heightRatio;
 	CMyTextEdit			*userTextEdit;
 	CMyTextEdit			*passwordTextEdit;
+	QWidget				*main_widget;
+	QWidget				*center_widget;
 };
 
 #endif // MAINWINDOW_H
