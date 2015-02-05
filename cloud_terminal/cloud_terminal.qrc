@@ -17,4 +17,30 @@
         <file alias="dialogClose">Resources/dialog_res/dialogClose.png</file>
         <file alias="dialogClose_hover">Resources/dialog_res/dialogClose_hover.png</file>
     </qresource>
+    <qresource prefix="/second_logres">
+        <file alias="default">Resources/secondloginres/default.png</file>
+        <file alias="addusernomal">Resources/secondloginres/addusernomal.png</file>
+        <file alias="logo">Resources/secondloginres/logo.png</file>
+    </qresource>
+    <qresource prefix="/userpic">
+        <file alias="p1">Resources/userpic/default1.png</file>
+        <file alias="p2">Resources/userpic/default2.png</file>
+        <file alias="p3">Resources/userpic/default3.png</file>
+        <file alias="p4">Resources/userpic/default4.png</file>
+        <file alias="p5">Resources/userpic/default5.png</file>
+        <file alias="p6">Resources/userpic/default6.png</file>
+        <file alias="p7">Resources/userpic/default7.png</file>
+        <file alias="p8">Resources/userpic/default8.png</file>
+        <file alias="p9">Resources/userpic/default9.png</file>
+        <file alias="p10">Resources/userpic/default10.png</file>
+        <file alias="p11">Resources/userpic/default11.png</file>
+        <file alias="p12">Resources/userpic/default12.png</file>
+    </qresource>
+    <qresource prefix="/usercard">
+        <file alias="edit">Resources/usercard/editICON.png</file>
+        <file alias="defaultpic">Resources/usercard/default1.png</file>
+        <file alias="delclicked">Resources/usercard/delclicked.png</file>
+        <file alias="delnomal">Resources/usercard/delnomal.png</file>
+        <file alias="editselected">Resources/usercard/editICONsel.png</file>
+    </qresource>
 </RCC>
