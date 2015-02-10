@@ -4,31 +4,22 @@
 #include <QWidget>
 #include "clabel.h"
 #include <QPushButton>
-
-class MyLabel : public QLabel
-{ 
-	Q_OBJECT
-public:
-		MyLabel(QWidget * parent = 0);
-private:
-
-protected:
-	virtual void mouseReleaseEvent(QMouseEvent * ev);
-signals:
-	void clicked(void); 
-};
+#include "mylabel.h"
+#include <QString>
 
 class CUserCard : public QWidget
 {
 	Q_OBJECT
 
 public:
-	explicit CUserCard(QWidget *parent = 0);
+	explicit CUserCard(int noclickstate = 0,QWidget *parent = 0);
 	~CUserCard();
 
 	void setPixmap(QPixmap pix,int height = 110,int width = 110);
 	void setText(QString str);
 
+	static CUserCard* GetCurSelectCard();
+	static void SetCurSelectCard(CUserCard* card);
 
 public slots:
 	void clspressfunc();
@@ -43,6 +34,8 @@ private:
 	QPushButton* editbtn;
 	QLabel*		username;
 	int ismidselected;
+	static CUserCard* curselect;
+	int noclickstate;
 };
 
 #endif // CUSERCARD_H
