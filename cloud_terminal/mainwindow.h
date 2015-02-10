@@ -11,7 +11,7 @@
 #include "mytextedit.h"
 #include "zc_message_box.h"
 #include "togglebutton.h"
-
+#include <QScrollArea>
 class CMainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -24,11 +24,18 @@ public:
 	void createFirstLoginWidget();
 	void createSecondLoginWidget();
 	void createMoreThan3Widget();
-
+	void createChangePassWidget();
+	void createCloudHostSelectWidget();
+	void createChangeUserWidget();
+public:
+	void setScrollSheet(QScrollArea* scroll);
 private:
 	QWidget				*firstLoginWidget;
 	QWidget				*secondLoginWidget;
 	QWidget				*morethan3Widget;
+	QWidget				*changePswdWidget;
+	QWidget				*chostselectWdiget;
+	QWidget				*changeuserwidget;
 	QStackedLayout		*mainLayout;
 	int					currentScreenWidth;
 	int					currentScreenHeight;

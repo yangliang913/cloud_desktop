@@ -2,19 +2,12 @@
 #include "clabel.h"
 #include <QPushButton>
 
-MyLabel::MyLabel(QWidget * parent) : 
-QLabel(parent)
-{
-}
-void MyLabel::mouseReleaseEvent(QMouseEvent * ev)
-{
-	Q_UNUSED(ev)emit clicked();
-}
+CUserCard* CUserCard::curselect = NULL;
 
-
-CUserCard::CUserCard(QWidget *parent)
+CUserCard::CUserCard(int state,QWidget *parent)
 	: QWidget(parent)
 {
+	noclickstate = state;
 	this->setMinimumSize(121, 155);
 	ismidselected = 0;
 	midpic = new MyLabel(this);
@@ -22,7 +15,10 @@ CUserCard::CUserCard(QWidget *parent)
 	midpic->setGeometry(0, 10, 110, 110);
 	midpic->setStyleSheet("border-width: 1px;   border-style: solid;   border-color: rgba(88,178, 255,100);");
 
-	connect(midpic, SIGNAL(clicked()), this, SLOT(midclickfunc()));
+	if (!noclickstate)
+	{
+		connect(midpic, SIGNAL(clicked()), this, SLOT(midclickfunc()));
+	}
 
 	closebtn = new QPushButton(this);
 	closebtn->setStyleSheet("border:2px groove gray;border-radius:11px;padding:2px 4px;");
@@ -34,9 +30,10 @@ CUserCard::CUserCard(QWidget *parent)
 	closebtn->hide();
 
 	username = new QLabel(this);
-	username->setFixedSize(60, 10);
+	username->setFixedSize(280, 20);
+	username->setStyleSheet("background-color:transparent;color:rgb(228,228,228);font-size:20px;border:0px;");
 	username->setText(QString(" "));
-	username->setGeometry(5, 144, 100, 14);
+	username->setGeometry(5, 135, 280, 20);
 
 	editbtn = new QPushButton(this);
 	editbtn->setIcon(QIcon(QString(":/usercard/edit")));
@@ -89,6 +86,15 @@ void CUserCard::midclickfunc()
 		closebtn->show();
 		editbtn->show();
 		ismidselected = 1;
+
+
+		if ((CUserCard::GetCurSelectCard() != NULL) 
+			&& CUserCard::GetCurSelectCard() != this)
+		{
+			CUserCard::GetCurSelectCard()->midclickfunc();
+		}
+		CUserCard::SetCurSelectCard(this);
+
 		return;
 	}
 	if (ismidselected)
@@ -96,6 +102,7 @@ void CUserCard::midclickfunc()
 		midpic->setStyleSheet("border-width: 1px;   border-style: solid;   border-color: rgba(88,178, 255,100);");
 		closebtn->hide();
 		editbtn->hide();
+		CUserCard::SetCurSelectCard(NULL);
 		ismidselected = 0;
 		return;
 	}
@@ -104,5 +111,15 @@ void CUserCard::midclickfunc()
 
 void CUserCard::setText(QString str)
 {
-		username->setText(str);
+	username->setText(str);
+}
+
+CUserCard* CUserCard::GetCurSelectCard()
+{
+	return curselect;
+}
+
+void CUserCard::SetCurSelectCard(CUserCard* card)
+{
+	curselect = card;
 }

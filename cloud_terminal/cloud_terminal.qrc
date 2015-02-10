@@ -18,9 +18,18 @@
         <file alias="dialogClose_hover">Resources/dialog_res/dialogClose_hover.png</file>
     </qresource>
     <qresource prefix="/second_logres">
-        <file alias="default">Resources/secondloginres/default.png</file>
-        <file alias="addusernomal">Resources/secondloginres/addusernomal.png</file>
-        <file alias="logo">Resources/secondloginres/logo.png</file>
+        <file alias="changclicked">Resources/secondloginres/changclicked.png</file>
+        <file alias="changepwdhover">Resources/secondloginres/changepwdhover.png</file>
+        <file alias="changepwdnomal">Resources/secondloginres/changepwdnomal.png</file>
+        <file alias="changesetclicked">Resources/secondloginres/changesetclicked.png</file>
+        <file alias="changesethover">Resources/secondloginres/changesethover.png</file>
+        <file alias="changesetnomal">Resources/secondloginres/changesetnomal.png</file>
+        <file alias="changhover">Resources/secondloginres/changhover.png</file>
+        <file alias="changnomal">Resources/secondloginres/changnomal.png</file>
+        <file alias="changpwdclicked">Resources/secondloginres/changpwdclicked.png</file>
+        <file alias="inputpwd">Resources/secondloginres/inputpwd.png</file>
+        <file alias="pwdarrowclicked">Resources/secondloginres/pwdarrowclicked.png</file>
+        <file alias="uninputpwd">Resources/secondloginres/uninputpwd.png</file>
     </qresource>
     <qresource prefix="/userpic">
         <file alias="p1">Resources/userpic/default1.png</file>
@@ -35,6 +44,7 @@
         <file alias="p10">Resources/userpic/default10.png</file>
         <file alias="p11">Resources/userpic/default11.png</file>
         <file alias="p12">Resources/userpic/default12.png</file>
+        <file alias="picbg">Resources/userpic/picbg.png</file>
     </qresource>
     <qresource prefix="/usercard">
         <file alias="edit">Resources/usercard/editICON.png</file>
@@ -42,5 +52,38 @@
         <file alias="delclicked">Resources/usercard/delclicked.png</file>
         <file alias="delnomal">Resources/usercard/delnomal.png</file>
         <file alias="editselected">Resources/usercard/editICONsel.png</file>
+    </qresource>
+    <qresource prefix="/morethan3">
+        <file alias="left">Resources/morethan3/leftA.png</file>
+        <file alias="right">Resources/morethan3/rightA.png</file>
+    </qresource>
+    <qresource prefix="/changepwd">
+        <file alias="retclicked">Resources/changpswd_res/retICONclicked.png</file>
+        <file alias="rethover">Resources/changpswd_res/retICONhover.png</file>
+        <file alias="retnomal">Resources/changpswd_res/retICONnomal.png</file>
+        <file alias="sureclicked">Resources/changpswd_res/sureICONclicked.png</file>
+        <file alias="surehover">Resources/changpswd_res/sureICONhover.png</file>
+        <file alias="surenomal">Resources/changpswd_res/sureICONnomal.png</file>
+        <file alias="userpic">Resources/changpswd_res/userpic.png</file>
+    </qresource>
+    <qresource prefix="/changeuser">
+        <file>Resources/changeuser/adduserclicked.png</file>
+        <file alias="addusernomal">Resources/changeuser/addusernomal.png</file>
+        <file alias="default">Resources/changeuser/default.png</file>
+        <file>Resources/changeuser/adduserhover.png</file>
+    </qresource>
+    <qresource prefix="/hostselect">
+        <file alias="itemhover">Resources/hostselect/itemhover.png</file>
+        <file alias="itemselected">Resources/hostselect/itemselected.png</file>
+        <file alias="logo">Resources/hostselect/logo.png</file>
+        <file alias="retclicked">Resources/hostselect/retclicked.png</file>
+        <file alias="rethover">Resources/hostselect/rethover.png</file>
+        <file alias="retnomal">Resources/hostselect/retnomal.png</file>
+        <file alias="spiderbg">Resources/hostselect/spiderbg.png</file>
+        <file alias="spiderclicked">Resources/hostselect/spiderclicked.png</file>
+        <file alias="spidernomal">Resources/hostselect/spidernomal.png</file>
+        <file alias="sureclicked">Resources/hostselect/sureclicked.png</file>
+        <file alias="surehover">Resources/hostselect/surehover.png</file>
+        <file alias="surenomal">Resources/hostselect/surenomal.png</file>
     </qresource>
 </RCC>
